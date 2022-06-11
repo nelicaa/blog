@@ -1,0 +1,74 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32428.217
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{440763BF-077C-48DF-9C16-D6A527673F61}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{0FA14D78-8B94-4380-A8C1-D07D9B43F6C4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccess", "DataAccess", "{D69B9B79-3E91-463B-8C9F-E017B82B0FB7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Implementation", "Implementation", "{B944FC03-C2DD-45A7-846C-F677EB5FD2F0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{BCA04DB6-BF71-4A5C-A25D-4D84D5741ADF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "projekatASP.dataAccess", "projekatASP.dataAccess\projekatASP.dataAccess.csproj", "{A4DA2B6B-BB57-410D-A754-74674628DD0E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "projekatASP.domain", "projekatASP.domain\projekatASP.domain.csproj", "{5F29FF5C-E05A-4044-98D9-F8FD1D1C6820}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "projekatASP.implementation", "projekatASP.implementation\projekatASP.implementation.csproj", "{E499140D-74AA-4513-BACB-E3029FAAB63F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1FDB131D-DC14-4D3E-A117-6569BD9BAC58} = {1FDB131D-DC14-4D3E-A117-6569BD9BAC58}
+		{5F29FF5C-E05A-4044-98D9-F8FD1D1C6820} = {5F29FF5C-E05A-4044-98D9-F8FD1D1C6820}
+		{A4DA2B6B-BB57-410D-A754-74674628DD0E} = {A4DA2B6B-BB57-410D-A754-74674628DD0E}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "projekatASP.application", "projekatASP.application\projekatASP.application.csproj", "{1FDB131D-DC14-4D3E-A117-6569BD9BAC58}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5F29FF5C-E05A-4044-98D9-F8FD1D1C6820} = {5F29FF5C-E05A-4044-98D9-F8FD1D1C6820}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "projekatASP.api", "projekatASP.api\projekatASP.api.csproj", "{9ED66E61-45B8-4061-A3E3-BACAE0B96800}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A4DA2B6B-BB57-410D-A754-74674628DD0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4DA2B6B-BB57-410D-A754-74674628DD0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4DA2B6B-BB57-410D-A754-74674628DD0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4DA2B6B-BB57-410D-A754-74674628DD0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F29FF5C-E05A-4044-98D9-F8FD1D1C6820}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F29FF5C-E05A-4044-98D9-F8FD1D1C6820}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F29FF5C-E05A-4044-98D9-F8FD1D1C6820}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F29FF5C-E05A-4044-98D9-F8FD1D1C6820}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E499140D-74AA-4513-BACB-E3029FAAB63F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E499140D-74AA-4513-BACB-E3029FAAB63F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E499140D-74AA-4513-BACB-E3029FAAB63F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E499140D-74AA-4513-BACB-E3029FAAB63F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FDB131D-DC14-4D3E-A117-6569BD9BAC58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FDB131D-DC14-4D3E-A117-6569BD9BAC58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FDB131D-DC14-4D3E-A117-6569BD9BAC58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FDB131D-DC14-4D3E-A117-6569BD9BAC58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9ED66E61-45B8-4061-A3E3-BACAE0B96800}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9ED66E61-45B8-4061-A3E3-BACAE0B96800}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9ED66E61-45B8-4061-A3E3-BACAE0B96800}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9ED66E61-45B8-4061-A3E3-BACAE0B96800}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A4DA2B6B-BB57-410D-A754-74674628DD0E} = {D69B9B79-3E91-463B-8C9F-E017B82B0FB7}
+		{5F29FF5C-E05A-4044-98D9-F8FD1D1C6820} = {0FA14D78-8B94-4380-A8C1-D07D9B43F6C4}
+		{E499140D-74AA-4513-BACB-E3029FAAB63F} = {B944FC03-C2DD-45A7-846C-F677EB5FD2F0}
+		{1FDB131D-DC14-4D3E-A117-6569BD9BAC58} = {BCA04DB6-BF71-4A5C-A25D-4D84D5741ADF}
+		{9ED66E61-45B8-4061-A3E3-BACAE0B96800} = {440763BF-077C-48DF-9C16-D6A527673F61}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3AF93E67-F2FA-477E-88A7-55032A4F797A}
+	EndGlobalSection
+EndGlobal

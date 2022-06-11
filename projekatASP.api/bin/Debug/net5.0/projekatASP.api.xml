@@ -1,0 +1,468 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>projekatASP.api</name>
+    </assembly>
+    <members>
+        <member name="M:projekatASP.api.Controllers.CategoryController.Get(projekatASP.application.Searches.CategorySearchDto,projekatASP.application.UseCases.Queries.Categories.IGetCategories)">
+            <summary>
+            Get all categories or filter on : keyword - name of category.
+            </summary>
+            <returns></returns>
+            <response code="200">Successfull show category.</response>
+        </member>
+        <member name="M:projekatASP.api.Controllers.CategoryController.Get(System.Int32,projekatASP.application.UseCases.Queries.Categories.IGetCategory)">
+            <summary>
+            Get one category from id in url.
+            </summary>
+            <returns></returns>
+            <response code="200">Successfull show category.</response>
+            <response code="404">Not found.</response>
+        </member>
+        <member name="M:projekatASP.api.Controllers.CategoryController.Post(projekatASP.application.UseCases.DTO.CategoryDTO,projekatASP.application.UseCases.Commands.Categories.ICreateCategory)">
+             <summary>
+             Creates new category. Only authorized can insert new category.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST /api/Category
+                 {
+                    "name": "New Category"
+                 }
+            
+             </remarks>
+             <response code="201">Successfull creation.</response>
+             <response code="422">Validation failure.</response>
+             <response code="401">Unauthorized.</response>
+             <response code="409">Conflict if category with this value is already in database.</response>
+             <response code="500">Unexpected server error.</response>
+        </member>
+        <member name="M:projekatASP.api.Controllers.CategoryController.Put(System.Int32,projekatASP.application.UseCases.DTO.CategoryDTO,projekatASP.application.UseCases.Commands.Categories.IEditCategory)">
+             <summary>
+             Edit choosen category. Only authorized can update.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 PUT /api/Category
+                 {
+                    "name": "New name"
+                 }
+            
+             </remarks>
+             <response code="204">Successfull update.</response>
+             <response code="422">Validation failure.</response>
+             <response code="404">Not found category with this id.</response>
+             <response code="401">Unauthorized.</response>
+             <response code="409">Conflict if category with this value is already in database.</response>
+             <response code="500">Unexpected server error.</response>
+        </member>
+        <member name="M:projekatASP.api.Controllers.CategoryController.Delete(System.Int32,projekatASP.application.UseCases.Commands.Categories.IDeleteCategory)">
+            <summary>
+            Delete category. Only authorized can delete.
+            </summary>
+            <response code="204">Successful delete.</response>
+            <response code="404">Not found.</response>
+            <response code="401">Unauthorized.</response>
+            <response code="409">Conflict if category is linked with some posts.</response>
+            <response code="500">Unexpected server error.</response>
+        </member>
+        <member name="M:projekatASP.api.Controllers.CommentController.Post(projekatASP.application.UseCases.DTO.CommentDTO,projekatASP.application.UseCases.Commands.Comments.ICreateComment)">
+             <summary>
+             Creates new comment. Only authorized can insert comment.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST /api/Comment
+                 {
+                    "comment": "Some text here",
+                    "postId": "post id from database",
+                    "userId":"user id from database"
+                 }
+            
+             </remarks>
+             <response code="201">Successfull creation.</response>
+             <response code="422">Validation failure.</response>
+             <response code="401">Unauthorized.</response>
+             <response code="500">Unexpected server error.</response>
+        </member>
+        <member name="M:projekatASP.api.Controllers.CommentController.Put(System.Int32,projekatASP.application.UseCases.DTO.CommentDTO,projekatASP.application.UseCases.Commands.Comments.IEditComment)">
+             <summary>
+             Edit choosen comment. Only authorized can update.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 PUT /api/Comment
+                 {
+                    "comment": "New comment"
+                 }
+            
+             </remarks>
+             <response code="204">Successfull update.</response>
+             <response code="422">Validation failure.</response>
+             <response code="404">Not found category with this id.</response>
+             <response code="401">Unauthorized.</response>
+             <response code="500">Unexpected server error.</response>
+        </member>
+        <member name="M:projekatASP.api.Controllers.CommentController.Delete(System.Int32,projekatASP.application.UseCases.Commands.Comments.IDeleteComment)">
+            <summary>
+            Delete comment. Only authorized can delete.
+            </summary>
+            <response code="204">Successful delete.</response>
+            <response code="404">Not found.</response>
+            <response code="401">Unauthorized.</response>
+            <response code="500">Unexpected server error.</response>
+        </member>
+        <member name="M:projekatASP.api.Controllers.ImagesController.Delete(System.Int32,projekatASP.application.UseCases.Commands.Images.IDeleteImages)">
+            <summary>
+            Delete image. Only authorized can delete.
+            </summary>
+            <response code="204">Successful delete.</response>
+            <response code="404">Not found.</response>
+            <response code="401">Unauthorized.</response>
+            <response code="500">Unexpected server error.</response>
+        </member>
+        <member name="M:projekatASP.api.Controllers.LikeController.Post(projekatASP.application.UseCases.DTO.LikeDTO,projekatASP.application.UseCases.Commands.Likes.ICreateLike)">
+             <summary>
+             Creates new like. Only authorized can insert like.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST /api/Like
+                 {
+                    "postId": "post id from database",
+                    "userId":"user id from database"
+                 }
+            
+             </remarks>
+             <response code="201">Successfull creation.</response>
+             <response code="422">Validation failure.</response>
+             <response code="401">Unauthorized.</response>
+             <response code="500">Unexpected server error.</response>
+        </member>
+        <member name="M:projekatASP.api.Controllers.LikeController.Delete(projekatASP.application.UseCases.DTO.LikeDTO,projekatASP.application.UseCases.Commands.Likes.IDeleteLike)">
+             <summary>
+             Delete choosen like. Only authorized can update.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 DELETE /api/Comment
+                 {
+                    "postId": "post id from database",
+                    "userId":"user id from database"
+                 }
+            
+             </remarks>
+             <response code="204">Successful delete.</response>
+             <response code="404">Not found.</response>
+             <response code="401">Unauthorized.</response>
+             <response code="500">Unexpected server error.</response>
+        </member>
+        <member name="M:projekatASP.api.Controllers.LogController.Get(projekatASP.application.Searches.LogSearchDTO,projekatASP.application.UseCases.Queries.Logs.IGetLogs)">
+            <summary>
+            Get all logs or filter on : keyword - name of use case, date from - date to.
+            </summary>
+            <returns></returns>
+            <response code="200">Successfull show category.</response>
+        </member>
+        <member name="M:projekatASP.api.Controllers.LoginController.Post(projekatASP.application.UseCases.DTO.LoginDTO,projekatASP.implementation.Validators.CreateLoginValidator)">
+             <summary>
+             Login for users.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST /api/Category
+                 {
+                    "email": "email from database",
+                    "password":"password"
+                 }
+            
+             </remarks>
+             <response code="200">Logged in.</response>
+             <response code="422">Validation failure.</response>
+             <response code="404">Not found user.</response>
+             <response code="500">Unexpected server error.</response>
+        </member>
+        <member name="M:projekatASP.api.Controllers.PostController.Get(projekatASP.application.Searches.PostSearchDTO,projekatASP.application.UseCases.Queries.Posts.IGetPosts)">
+            <summary>
+            Get all posts or filter on : keyword - title, username, first name, last name, email from user; on categories; tags ; number of likes ; filter on date when post was created.
+            </summary>
+            <returns></returns>
+            <response code="200">Successfull show posts.</response>
+        </member>
+        <member name="M:projekatASP.api.Controllers.PostController.Get(System.Int32,projekatASP.application.UseCases.Queries.Posts.IGetPost)">
+            <summary>
+            Get one post from id in url.
+            </summary>
+            <returns></returns>
+            <response code="200">Successfull show category.</response>
+            <response code="404">Not found.</response>
+        </member>
+        <member name="M:projekatASP.api.Controllers.PostController.Post(ASPNedelja3Vezbe.Api.Core.Dto.InsertImage,projekatASP.application.UseCases.Commands.Posts.ICreatePost)">
+             <summary>
+             Creates new post. Only authorized can insert new post.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST /api/Post
+                 {
+                    "Title": "Title",
+                    "Text":"Description",
+                    "UserId":"user id from database",
+                    "PostTag":[1,2,3],
+                    "Image":"upload main picture from form",
+                    "ImagesUpload":"upload pictures from form",
+                    "CategoryId":"id category fromdatabase"
+                    
+                    
+                 }
+            
+             </remarks>
+             <response code="201">Successfull creation.</response>
+             <response code="422">Validation failure.</response>
+             <response code="401">Unauthorized.</response>
+             <response code="500">Unexpected server error.</response>
+        </member>
+        <member name="M:projekatASP.api.Controllers.PostController.Put(System.Int32,ASPNedelja3Vezbe.Api.Core.Dto.InsertImage,projekatASP.application.UseCases.Commands.Posts.IEditPost)">
+             <summary>
+             Edit choosen post. Only authorized can update.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 PUT /api/Post
+                 {
+                    "Title": "Title",
+                    "Text":"Description",
+                    "PostTag":[1,2,3],
+                    "Image":"upload main picture from form",
+                    "ImagesUpload":"upload pictures from form",
+                    "CategoryId":"id category fromdatabase"
+                 }
+            
+             </remarks>
+             <response code="204">Successfull update.</response>
+             <response code="422">Validation failure.</response>
+             <response code="404">Not found post with this id.</response>
+             <response code="401">Unauthorized.</response>
+             <response code="500">Unexpected server error.</response>
+        </member>
+        <member name="M:projekatASP.api.Controllers.PostController.Delete(System.Int32,projekatASP.application.UseCases.Commands.Posts.IDeletePost)">
+            <summary>
+            Delete post. Only authorized can delete.
+            </summary>
+            <response code="204">Successful delete.</response>
+            <response code="404">Not found.</response>
+            <response code="401">Unauthorized.</response>
+            <response code="500">Unexpected server error.</response>
+        </member>
+        <member name="M:projekatASP.api.Controllers.RoleController.Get(projekatASP.application.Searches.RoleSearchDTO,projekatASP.application.UseCases.Queries.Roles.IGetRoles)">
+            <summary>
+            Get all roles or filter on : keyword - name of role.
+            </summary>
+            <returns></returns>
+            <response code="200">Successfull show role.</response>
+        </member>
+        <member name="M:projekatASP.api.Controllers.RoleController.Get(System.Int32,projekatASP.application.UseCases.Queries.Roles.IGetRole)">
+            <summary>
+            Get one role from id in url.
+            </summary>
+            <returns></returns>
+            <response code="200">Successfull show role.</response>
+            <response code="404">Not found.</response>
+        </member>
+        <member name="M:projekatASP.api.Controllers.RoleController.Post(projekatASP.application.UseCases.DTO.RoleDTO,projekatASP.application.UseCases.Commands.Roles.ICreateRole)">
+             <summary>
+             Creates new role. Only authorized can insert new category.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST /api/Role
+                 {
+                    "name": "New role"
+                 }
+            
+             </remarks>
+             <response code="201">Successfull creation.</response>
+             <response code="422">Validation failure.</response>
+             <response code="401">Unauthorized.</response>
+             <response code="409">Conflict if role with this name is already in database.</response>
+             <response code="500">Unexpected server error.</response>
+        </member>
+        <member name="M:projekatASP.api.Controllers.RoleController.Put(System.Int32,projekatASP.application.UseCases.DTO.RoleDTO,projekatASP.application.UseCases.Commands.Roles.IEditRole)">
+             <summary>
+             Edit choosen role. Only authorized can update.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 PUT /api/Role
+                 {
+                    "name": "New name"
+                 }
+            
+             </remarks>
+             <response code="204">Successfull update.</response>
+             <response code="422">Validation failure.</response>
+             <response code="404">Not found category with this id.</response>
+             <response code="401">Unauthorized.</response>
+             <response code="409">Conflict if role with this name is already in database.</response>
+             <response code="500">Unexpected server error.</response>
+        </member>
+        <member name="M:projekatASP.api.Controllers.RoleController.Delete(System.Int32,projekatASP.application.UseCases.Commands.Roles.IDeleteRole)">
+            <summary>
+            Delete role. Only authorized can delete.
+            </summary>
+            <response code="204">Successful delete.</response>
+            <response code="404">Not found.</response>
+            <response code="401">Unauthorized.</response>
+            <response code="409">Conflict if role is linked with some users.</response>
+            <response code="500">Unexpected server error.</response>
+        </member>
+        <member name="M:projekatASP.api.Controllers.TagController.Get(projekatASP.application.Searches.TagSearchDTO,projekatASP.application.UseCases.Queries.Tags.IGetTags)">
+            <summary>
+            Get all tags or filter on : keyword - name of tag.
+            </summary>
+            <returns></returns>
+            <response code="200">Successfull show tag.</response>
+        </member>
+        <member name="M:projekatASP.api.Controllers.TagController.Get(System.Int32,projekatASP.application.UseCases.Queries.Tags.IGetTag)">
+            <summary>
+            Get one tag from id in url.
+            </summary>
+            <returns></returns>
+            <response code="200">Successfull show tag.</response>
+            <response code="404">Not found.</response>
+        </member>
+        <member name="M:projekatASP.api.Controllers.TagController.Post(projekatASP.application.UseCases.DTO.TagDTO,projekatASP.application.UseCases.Commands.Tags.ICreateTag)">
+             <summary>
+             Creates new tag. Only authorized can insert new tag.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST /api/Tag
+                 {
+                    "name": "New tag"
+                 }
+            
+             </remarks>
+             <response code="201">Successfull creation.</response>
+             <response code="422">Validation failure.</response>
+             <response code="401">Unauthorized.</response>
+             <response code="409">Conflict if tag with this name is already in database.</response>
+             <response code="500">Unexpected server error.</response>
+        </member>
+        <member name="M:projekatASP.api.Controllers.TagController.Put(System.Int32,projekatASP.application.UseCases.DTO.TagDTO,projekatASP.application.UseCases.Commands.Tags.IEditTag)">
+             <summary>
+             Edit choosen tag. Only authorized can update.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 PUT /api/Role
+                 {
+                    "name": "New name"
+                 }
+            
+             </remarks>
+             <response code="204">Successfull update.</response>
+             <response code="422">Validation failure.</response>
+             <response code="404">Not found category with this id.</response>
+             <response code="401">Unauthorized.</response>
+             <response code="409">Conflict if tag with this name is already in database.</response>
+             <response code="500">Unexpected server error.</response>
+        </member>
+        <member name="M:projekatASP.api.Controllers.TagController.Delete(System.Int32,projekatASP.application.UseCases.Commands.Tags.IDeleteTag)">
+            <summary>
+            Delete tag. Only authorized can delete.
+            </summary>
+            <response code="204">Successful delete.</response>
+            <response code="404">Not found.</response>
+            <response code="401">Unauthorized.</response>
+            <response code="409">Conflict if tag is linked with some posts.</response>
+            <response code="500">Unexpected server error.</response>
+        </member>
+        <member name="M:projekatASP.api.Controllers.UserController.Get(projekatASP.application.Searches.UserSearchDTO,projekatASP.application.UseCases.Queries.Users.IGetUsers)">
+            <summary>
+            Get all users or filter on : keyword - username, first name, last name, email.
+            </summary>
+            <returns></returns>
+            <response code="200">Successfull show users.</response>
+        </member>
+        <member name="M:projekatASP.api.Controllers.UserController.Get(System.Int32,projekatASP.application.UseCases.Queries.Users.IGetUser)">
+            <summary>
+            Get one user.
+            </summary>
+            <returns></returns>
+            <response code="200">Successfull show user.</response>
+            <response code="404">Not founduser.</response>
+        </member>
+        <member name="M:projekatASP.api.Controllers.UserController.Post(projekatASP.application.UseCases.DTO.InsertUserDTO,projekatASP.application.UseCases.Commands.Users.ICreateUser)">
+             <summary>
+             Creates new user.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST /api/User
+                 {
+              "FirstName":"Name",
+            "LastName":"Last name",
+             "Email":"email@adress.com",
+             "Username":"username123",
+            "Password":"Password12*",
+            "RoleId":"2"
+                    
+                    
+                 }
+            
+             </remarks>
+             <response code="201">Successfull creation.</response>
+             <response code="422">Validation failure.</response>
+             <response code="500">Unexpected server error.</response>
+        </member>
+        <member name="M:projekatASP.api.Controllers.UserController.Put(System.Int32,projekatASP.application.UseCases.DTO.InsertUserDTO,projekatASP.application.UseCases.Commands.Users.IEditUser)">
+             <summary>
+             Edit choosen user. Only authorized can update.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 PUT /api/User
+               
+             "FirstName":"Name",
+            "LastName":"Last name",
+             "Email":"email@adress.com",
+             "Username":"username123",
+            "Password":"Password12*",
+            "RoleId":"2"
+            
+             </remarks>
+             <response code="204">Successfull update.</response>
+             <response code="422">Validation failure.</response>
+             <response code="404">Not found user with this id.</response>
+             <response code="401">Unauthorized.</response>
+             <response code="409">Conflict if new user have same email or username like someone else in database, or try to update password but value is like old password.</response>
+             <response code="500">Unexpected server error.</response>
+             
+        </member>
+        <member name="M:projekatASP.api.Controllers.UserController.Delete(System.Int32,projekatASP.application.UseCases.Commands.Users.IDeleteUser)">
+            <summary>
+            Delete user. Only authorized can delete.
+            </summary>
+            <response code="204">Successful delete.</response>
+            <response code="404">Not found.</response>
+            <response code="401">Unauthorized.</response>
+            <response code="500">Unexpected server error.</response>
+        </member>
+    </members>
+</doc>

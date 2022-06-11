@@ -1,0 +1,11 @@
+C:\Users\MASTER\source\repos\projekatASP\projekatASP.domain\bin\Debug\net5.0\projekatASP.domain.deps.json
+C:\Users\MASTER\source\repos\projekatASP\projekatASP.domain\bin\Debug\net5.0\projekatASP.domain.dll
+C:\Users\MASTER\source\repos\projekatASP\projekatASP.domain\bin\Debug\net5.0\ref\projekatASP.domain.dll
+C:\Users\MASTER\source\repos\projekatASP\projekatASP.domain\bin\Debug\net5.0\projekatASP.domain.pdb
+C:\Users\MASTER\source\repos\projekatASP\projekatASP.domain\obj\Debug\net5.0\projekatASP.domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MASTER\source\repos\projekatASP\projekatASP.domain\obj\Debug\net5.0\projekatASP.domain.AssemblyInfoInputs.cache
+C:\Users\MASTER\source\repos\projekatASP\projekatASP.domain\obj\Debug\net5.0\projekatASP.domain.AssemblyInfo.cs
+C:\Users\MASTER\source\repos\projekatASP\projekatASP.domain\obj\Debug\net5.0\projekatASP.domain.csproj.CoreCompileInputs.cache
+C:\Users\MASTER\source\repos\projekatASP\projekatASP.domain\obj\Debug\net5.0\projekatASP.domain.dll
+C:\Users\MASTER\source\repos\projekatASP\projekatASP.domain\obj\Debug\net5.0\ref\projekatASP.domain.dll
+C:\Users\MASTER\source\repos\projekatASP\projekatASP.domain\obj\Debug\net5.0\projekatASP.domain.pdb
